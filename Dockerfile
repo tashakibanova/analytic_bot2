@@ -26,4 +26,4 @@ RUN pip install --no-cache-dir --upgrade pip \
 ENV PYTHONUNBUFFERED=1
 
 # Запуск приложения
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
+CMD ["python", "main.py"]
