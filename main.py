@@ -16,7 +16,7 @@ app = FastAPI()
 # Разрешаем запросы с любых источников (для GitHub Pages)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # можешь заменить на ['https://tashakibanova.github.io'] для большей безопасности
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
