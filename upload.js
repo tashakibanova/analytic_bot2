@@ -18,7 +18,7 @@ uploadForm.addEventListener("submit", async (e) => {
   formData.append("email", email);
 
   try {
-    const response = await fetch("https://analytic-bot2.onrender.com", {
+    const response = await fetch("https://analytic-bot2.onrender.com/upload", {
       method: "POST",
       body: formData
     });
