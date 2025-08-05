@@ -2,14 +2,14 @@ from fastapi import FastAPI, UploadFile, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import fitz  # PyMuPDF
 import pandas as pd
-from openai import OpenAI
+import openai
 from dotenv import load_dotenv
 import os
 from io import BytesIO
 
 # Загружаем переменные окружения
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 app = FastAPI()
 
@@ -75,7 +75,7 @@ def ask_gpt(text):
         f"Текст:\n{text}"
     )
 
-    response = client.chat.completions.create(
+    response = openai.chat.completions.create(
         model="gpt-4",
         messages=[{"role": "system", "content": prompt}],
         temperature=0.4,
