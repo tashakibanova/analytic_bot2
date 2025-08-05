@@ -4,8 +4,10 @@ python-multipart==0.0.9
 openai==1.33.0
 python-dotenv==1.0.1
 PyMuPDF==1.24.0
+pandas==1.5.3 --only-binary :all:
 openpyxl==3.1.2
-pandas==1.5.3
+
+
 
 
 
